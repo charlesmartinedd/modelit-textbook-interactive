@@ -1,0 +1,12 @@
+{
+  "number": 2,
+  "unit": 1,
+  "unit_name": "Foundations of Systems",
+  "title": "Patterns in Nature",
+  "subtitle": "Fractals, Fibonacci, and universal patterns",
+  "hook": "The same pattern appears in galaxies, hurricanes, and your fingerprint. What is it?",
+  "ngss": [
+    "MS-LS2-1",
+    "MS-PS1-1"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "number": 7,
+  "unit": 3,
+  "unit_name": "Earth Systems",
+  "title": "Water's Journey",
+  "subtitle": "The hydrologic cycle revealed",
+  "hook": "The water in your glass today might have been inside a dinosaur 65 million years ago.",
+  "ngss": [
+    "MS-ESS2-4",
+    "MS-ESS3-1"
+  ]
+}

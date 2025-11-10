@@ -1,0 +1,12 @@
+{
+  "number": 10,
+  "unit": 4,
+  "unit_name": "Human-Designed Systems",
+  "title": "Technology Systems",
+  "subtitle": "Your phone from 6 continents",
+  "hook": "Your smartphone contains materials from 6 continents and required 1000+ people to make.",
+  "ngss": [
+    "MS-ETS1-1",
+    "MS-ETS1-2"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "number": 4,
+  "unit": 2,
+  "unit_name": "Living Systems",
+  "title": "Ecosystems - Nature's Networks",
+  "subtitle": "How wolves changed rivers",
+  "hook": "When wolves returned to Yellowstone, the rivers physically changed shape. How?",
+  "ngss": [
+    "MS-LS2-1",
+    "MS-LS2-2",
+    "MS-LS2-4"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "number": 5,
+  "unit": 2,
+  "unit_name": "Living Systems",
+  "title": "The Human Body as a System",
+  "subtitle": "37 trillion cells working together",
+  "hook": "Every 7 years, you have an almost completely new body. How does 'you' stay you?",
+  "ngss": [
+    "MS-LS1-3",
+    "MS-LS1-8"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "number": 11,
+  "unit": 4,
+  "unit_name": "Human-Designed Systems",
+  "title": "Social and Economic Systems",
+  "subtitle": "Why toilet paper disappeared",
+  "hook": "In 2020, toilet paper vanished from stores. It wasn't a supply problem\u2014it was psychology.",
+  "ngss": [
+    "MS-ESS3-4",
+    "MS-ETS1-1"
+  ]
+}

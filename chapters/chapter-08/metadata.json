@@ -1,0 +1,13 @@
+{
+  "number": 8,
+  "unit": 3,
+  "unit_name": "Earth Systems",
+  "title": "Weather and Climate Systems",
+  "subtitle": "Why it snows in Texas",
+  "hook": "A butterfly in Brazil can actually affect the weather in Texas. Here's how.",
+  "ngss": [
+    "MS-ESS2-5",
+    "MS-ESS2-6",
+    "MS-ESS3-5"
+  ]
+}

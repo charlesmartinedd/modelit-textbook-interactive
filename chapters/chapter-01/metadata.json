@@ -1,0 +1,12 @@
+{
+  "number": 1,
+  "unit": 1,
+  "unit_name": "Foundations of Systems",
+  "title": "Welcome to Systems Thinking",
+  "subtitle": "Discover how everything connects",
+  "hook": "Why did changing one traffic light in Los Angeles cause a massive citywide traffic jam?",
+  "ngss": [
+    "MS-ESS3-3",
+    "MS-ETS1-1"
+  ]
+}

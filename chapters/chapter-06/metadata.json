@@ -1,0 +1,12 @@
+{
+  "number": 6,
+  "unit": 2,
+  "unit_name": "Living Systems",
+  "title": "From Cells to Organisms",
+  "subtitle": "One cell becomes a whole person",
+  "hook": "You started as one single cell. How did it know to become a brain, a heart, and a toe?",
+  "ngss": [
+    "MS-LS1-1",
+    "MS-LS1-2"
+  ]
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <title>{{CHAPTER_TITLE}} | Connected</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           MODELIT DESIGN SYSTEM - CHAPTER STYLES
+           ======================================== */
+
+        :root {
+            /* Brand Colors */
+            --primary-blue: #0F6ACE;
+            --bright-cyan: #48d2fc;
+            --accent-coral: #FF6B6B;
+            --dark-text: #2c3e50;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+
+            /* Typography */
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Lora', Georgia, serif;
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+
+            /* Transitions */
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(15, 106, 206, 0.08);
+            --shadow-md: 0 8px 24px rgba(15, 106, 206, 0.12);
+            --shadow-lg: 0 16px 48px rgba(15, 106, 206, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+            background: var(--white);
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+
+        .chapter-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(15, 106, 206, 0.1);
+            padding: var(--spacing-md) 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-back:hover {
+            color: var(--bright-cyan);
+            transform: translateX(-4px);
+        }
+
+        .nav-progress {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            color: var(--dark-text);
+        }
+
+        .progress-bar {
+            width: 120px;
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--bright-cyan));
+            width: 0%;
+            transition: width 0.6s ease;
+        }
+
+        /* ========================================
+           CHAPTER HEADER
+           ======================================== */
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--bright-cyan));
+            color: var(--white);
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .chapter-number {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .chapter-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .chapter-hook {
+            font-size: 1.25rem;
+            font-style: italic;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid var(--accent-coral);
+            border-radius: 8px;
+        }
+
+        /* ========================================
+           MAIN CONTENT
+           ======================================== */
+
+        .chapter-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-text {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-text p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .highlight-box {
+            background: var(--light-gray);
+            border-left: 4px solid var(--bright-cyan);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .highlight-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* ========================================
+           INTERACTIVE ELEMENTS
+           ======================================== */
+
+        .interactive-container {
+            background: var(--white);
+            border: 2px solid var(--bright-cyan);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .interactive-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .interactive-title::before {
+            content: '⚡';
+            font-size: 1.75rem;
+        }
+
+        /* Quiz Styles */
+        .quiz-question {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .quiz-question-text {
+            font-family: var(--font-display);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .quiz-option {
+            padding: var(--spacing-md);
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--bright-cyan);
+            background: rgba(72, 210, 252, 0.05);
+        }
+
+        .quiz-option.correct {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .quiz-option.incorrect {
+            border-color: var(--accent-coral);
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .quiz-feedback {
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-top: var(--spacing-sm);
+            font-family: var(--font-display);
+        }
+
+        .quiz-feedback.correct {
+            background: rgba(76, 175, 80, 0.15);
+            color: #2E7D32;
+        }
+
+        .quiz-feedback.incorrect {
+            background: rgba(255, 107, 107, 0.15);
+            color: #C62828;
+        }
+
+        /* Simulation Styles */
+        .simulation-area {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .simulation-node {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 3px solid var(--primary-blue);
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .simulation-node:hover {
+            transform: scale(1.15);
+            box-shadow: var(--shadow-md);
+        }
+
+        .simulation-node.active {
+            border-color: var(--bright-cyan);
+            box-shadow: 0 0 0 4px rgba(72, 210, 252, 0.2);
+        }
+
+        /* ========================================
+           CHAPTER NAVIGATION
+           ======================================== */
+
+        .chapter-footer {
+            background: var(--light-gray);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .chapter-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-family: var(--font-display);
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-button:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-button.next {
+            justify-content: flex-end;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .chapter-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .chapter-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .simulation-node {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="chapter-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                ← Back to Chapters
+            </a>
+            <div class="nav-progress">
+                <span class="progress-label">Progress</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-percent" id="progressPercent">0%</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="header-content">
+            <div class="chapter-badge">{{UNIT_NAME}}</div>
+            <div class="chapter-number">Chapter {{CHAPTER_NUMBER}}</div>
+            <h1 class="chapter-title">{{CHAPTER_TITLE}}</h1>
+            <p class="chapter-subtitle">{{CHAPTER_SUBTITLE}}</p>
+            <div class="chapter-hook">
+                {{CHAPTER_HOOK}}
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="chapter-content">
+        {{CONTENT_SECTIONS}}
+
+        <!-- Interactive Element Example -->
+        <div class="interactive-container">
+            <h2 class="interactive-title">Try It Yourself</h2>
+            {{INTERACTIVE_ELEMENT}}
+        </div>
+
+        <!-- Quiz Example -->
+        <div class="interactive-container">
+            <h2 class="interactive-title">Check Your Understanding</h2>
+            {{QUIZ_ELEMENT}}
+        </div>
+    </main>
+
+    <!-- Chapter Footer & Navigation -->
+    <footer class="chapter-footer">
+        <div class="footer-content">
+            <h3 style="font-family: var(--font-display); margin-bottom: var(--spacing-md);">
+                Continue Learning
+            </h3>
+            <div class="chapter-navigation">
+                <a href="{{PREV_CHAPTER_URL}}" class="nav-button prev">
+                    ← Previous Chapter
+                </a>
+                <a href="{{NEXT_CHAPTER_URL}}" class="nav-button next">
+                    Next Chapter →
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Progress tracking
+        let progress = 0;
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+
+        function updateProgress() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progress = (scrollTop / scrollHeight) * 100;
+
+            progressFill.style.width = progress + '%';
+            progressPercent.textContent = Math.round(progress) + '%';
+
+            // Save progress
+            saveProgress();
+        }
+
+        window.addEventListener('scroll', updateProgress);
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const chapterData = {
+                chapter: {{CHAPTER_NUMBER}},
+                progress: progress,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('chapter-{{CHAPTER_NUMBER}}-progress', JSON.stringify(chapterData));
+        }
+
+        // Load saved progress
+        function loadProgress() {
+            const saved = localStorage.getItem('chapter-{{CHAPTER_NUMBER}}-progress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                console.log(`Welcome back! You were ${Math.round(data.progress)}% through this chapter.`);
+            }
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const fadeElements = document.querySelectorAll('.content-section, .interactive-container');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Quiz functionality
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const isCorrect = this.dataset.correct === 'true';
+                const question = this.closest('.quiz-question');
+                const feedback = question.querySelector('.quiz-feedback');
+
+                // Clear previous selections
+                question.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+
+                // Mark selection
+                this.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+                // Show feedback
+                if (feedback) {
+                    feedback.style.display = 'block';
+                    feedback.classList.add(isCorrect ? 'correct' : 'incorrect');
+                }
+            });
+        });
+
+        // Initialize
+        loadProgress();
+        updateProgress();
+
+        // Console welcome
+        console.log('%c🌍 Connected: Chapter {{CHAPTER_NUMBER}}', 'color: #0F6ACE; font-size: 18px; font-weight: bold;');
+        console.log('%c{{CHAPTER_TITLE}}', 'color: #48d2fc; font-size: 14px;');
+    </script>
+</body>
+</html>
