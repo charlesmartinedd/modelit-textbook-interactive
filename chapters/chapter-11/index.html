@@ -1,227 +1,140 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Social and Economic Systems | Middle School Science</title>
-    <meta name="description" content="Explore social and economic systems with systems thinking, focusing on NGSS standards for middle school science education.">
+    <title>Chapter 11: Social Systems | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <style>
-        body {
-            font-family: 'Lora', serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #0F6ACE;
-            color: #fff;
-            padding: 20px;
+        .chapter-header {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
-
-        nav {
-            margin: 20px 0;
+        
+        .simulation-container {
+            background: #fdfefe;
+            border: 1px solid #ecf0f1;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        nav a {
-            color: #48d2fc;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+        canvas {
+            width: 100%;
+            height: 300px;
+            background: #ecf0f1;
+            border-radius: 10px;
         }
-
-        nav a:hover {
-            color: #FF6B6B;
+        
+        .sim-controls {
+            text-align: center;
+            margin-top: 1.5rem;
         }
-
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Inter', sans-serif;
-            margin: 20px 0;
-        }
-
-        h1 {
-            font-size: 2.5em;
+        
+        .btn-panic {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
             font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.1s;
+            box-shadow: 0 4px 0 #d35400;
         }
-
-        h2 {
-            font-size: 2em;
-            font-weight: 600;
+        
+        .btn-panic:active {
+            transform: translateY(4px);
+            box-shadow: none;
         }
-
-        h3 {
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        .highlight {
-            background-color: #48d2fc;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background: #0F6ACE;
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
+        
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Chapter 11: Social and Economic Systems</h1>
-        <nav>
-            <a href="index.html">Back to Main Page</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 11</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 4: Human Systems</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Social and Economic Systems</h1>
+            <p class="hero-description">
+                In 2020, toilet paper vanished from stores. It wasn't a supply problem—it was psychology.
+            </p>
+        </div>
     </header>
 
-    <div class="container">
-        <section>
-            <h2>Hook: The Great Toilet Paper Shortage of 2020</h2>
-            <p>In early 2020, something strange happened—store shelves were suddenly empty of toilet paper! But why? 
-            Was there a shortage of trees or factories to make toilet paper? Not really. It was a perfect example of 
-            how psychology and social behavior can impact economic systems. When people heard about the pandemic, 
-            they wanted to feel prepared, so they bought lots of toilet paper, more than they needed. This scenario 
-            gives us a peek into social and economic systems and how they work together.</p>
-        </section>
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                Humans are social animals. We look at what others are doing to decide what we should do. 
+                Usually, this is good (learning language). Sometimes, it creates a disaster.
+            </p>
 
-        <section>
-            <h2>Section 1: Understanding Social Systems</h2>
-            <p>Social systems are the organized ways in which people interact in a community or society. Imagine your 
-            school as a social system. There are rules, roles, and relationships that help it run smoothly. You have 
-            teachers, students, and staff, each with different responsibilities. But what happens if everyone decides 
-            to do whatever they want without following the rules? Chaos! Social systems rely on cooperation, shared 
-            goals, and communication to function effectively.</p>
-            <p>Real-world example: Think about social media platforms. They connect millions of people worldwide, 
-            allowing them to share information and ideas. But these platforms also need rules and guidelines to 
-            prevent misinformation and ensure respectful interactions.</p>
-            <p class="highlight"><strong>Key Concept:</strong> Social System - An organized network of relationships 
-            among people in a society or community.</p>
-        </section>
+            <h2>The Tragedy of the Commons</h2>
+            <p>
+                Imagine a shared resource (like toilet paper at a store). 
+                If everyone takes what they need, there is enough for everyone. 
+                But if one person gets scared and takes too much, everyone else gets scared too.
+            </p>
 
-        <section>
-            <h2>Section 2: The Intricacies of Economic Systems</h2>
-            <p>Economic systems involve how we produce, distribute, and consume goods and services. Imagine a giant 
-            web where all the parts are connected. When one part changes, it affects the whole system. For example, 
-            if a factory producing your favorite snack stops working, the shortage will affect stores, prices, and 
-            even what you buy.</p>
-            <p>Real-world example: During the toilet paper shortage, demand soared, leading stores to limit purchases. 
-            This decision balanced supply and demand, demonstrating how economic systems respond to changes.</p>
-            <p class="highlight"><strong>Key Concept:</strong> Economic System - The method by which societies organize 
-            the production, distribution, and consumption of goods and services.</p>
-        </section>
+            <div class="simulation-container">
+                <h3>🧻 The Panic Button</h3>
+                <p>Watch the shoppers. Hold down the button to spread a rumor that stock is running low.</p>
+                
+                <canvas id="socialCanvas"></canvas>
+                
+                <div class="sim-controls">
+                    <button id="panicBtn" class="btn-panic">Trigger Panic Rumor</button>
+                </div>
+            </div>
 
-        <section>
-            <h2>Section 3: Systems Thinking in Social and Economic Contexts</h2>
-            <p>Systems thinking encourages us to view problems as parts of a whole rather than isolated events. It helps 
-            us understand the connections and patterns within systems. By using systems thinking, we can better predict 
-            outcomes and make informed decisions.</p>
-            <p>Step-by-step explanation:</p>
-            <ol>
-                <li>Identify the parts of the system—people, products, processes.</li>
-                <li>Observe how these parts interact and influence each other.</li>
-                <li>Consider the feedback loops—how one change can lead to another.</li>
-                <li>Think about the system's goals and how they can be achieved efficiently.</li>
-            </ol>
-            <p>Real-world example: Imagine planning a school event. You need to consider the venue, food, entertainment, 
-            and participants. Each part influences the others, requiring careful coordination to ensure success.</p>
-            <p class="highlight"><strong>Key Concept:</strong> Systems Thinking - A way of understanding how different 
-            parts of a system interact and influence each other to achieve a common goal.</p>
-        </section>
+            <h2>Feedback Loops in Society</h2>
+            <p>
+                This is a <strong>Positive Feedback Loop</strong> (which, remember, doesn't mean "good").
+                <br>
+                <em>Fear -> Buy More -> Empty Shelf -> More Fear -> Buy Even More.</em>
+            </p>
+            
+            <p>
+                Understanding this helps us stop it. During shortages, stores limit purchase quantities (a "System Constraint") to break the loop.
+            </p>
 
-        <section>
-            <h2>Section 4: Connections to Other Chapters</h2>
-            <p>Social and economic systems are linked to many other topics. For example, in Chapter 5, we explored 
-            ecosystems and how living organisms interact with their environment. Just like ecosystems, social and 
-            economic systems depend on balance and cooperation.</p>
-            <p>In Chapter 9, we learned about technological systems and how innovations can disrupt existing social 
-            and economic systems. Consider how online shopping has changed the way we buy things and impacted local stores.</p>
-        </section>
+        </article>
 
-        <section>
-            <h2>Summary and Reflection Questions</h2>
-            <p>In this chapter, we've learned that social and economic systems are intricate networks of relationships 
-            and processes. By using systems thinking, we can better understand and manage these systems.</p>
-            <p>Reflection Questions:</p>
-            <ol>
-                <li>How did the toilet paper shortage highlight the connection between social behavior and economic systems?</li>
-                <li>Can you think of another situation where systems thinking could be applied to solve a problem?</li>
-                <li>How do social and economic systems influence your everyday life?</li>
-            </ol>
-            <p>By exploring these concepts, you can develop a deeper understanding of the complex systems that shape 
-            our world and how you can become an informed and thoughtful participant in them.</p>
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>The Final Lesson</h2>
+                <p>You have the tools. Now, how do you use them?</p>
+                <a href="../chapter-12/" class="btn-cta" style="margin-top: 1rem;">Next: Becoming a Systems Thinker →</a>
+            </div>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2023 ModelIt. All rights reserved.</p>
-    </footer>
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="social-sim.js"></script>
 </body>
-
 </html>
-```
-
-**SEO Optimization Recommendations:**
-
-1. **Title Tag Optimization:** 
-   - Original: "Chapter 11: Social and Economic Systems"
-   - Optimized: "Understanding Social and Economic Systems | Middle School Science"
-
-2. **Meta Description:**
-   - "Explore social and economic systems with systems thinking, focusing on NGSS standards for middle school science education."
-
-3. **Header Hierarchy:**
-   - H1: Chapter 11: Social and Economic Systems
-   - H2: Hook: The Great Toilet Paper Shortage of 2020
-   - H2: Section 1: Understanding Social Systems
-   - H2: Section 2: The Intricacies of Economic Systems
-   - H2: Section 3: Systems Thinking in Social and Economic Contexts
-   - H2: Section 4: Connections to Other Chapters
-   - H2: Summary and Reflection Questions
-
-4. **Image Alt Text:**
-   - No images provided in the context, but if there were, use alt text like "Diagram of social systems in action" or "Economic systems flowchart".
-
-5. **Internal Linking Suggestions:**
-   - Link to Chapter 5 on ecosystems for related content on balance and cooperation.
-   - Link to Chapter 9 on technological systems for insights on innovation impacts.
-
-6. **Keywords for Teachers Searching:**
-   - Middle school social systems
-   - Economic systems for students
-   - Systems thinking examples
-   - NGSS standards social studies
-   - Understanding economic changes
-
-These optimizations should enhance the discoverability of Chapter 11 for educators searching for resources aligned with NGSS standards in middle school science, focusing on systems thinking, social, and economic systems.

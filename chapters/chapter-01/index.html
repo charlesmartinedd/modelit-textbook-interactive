@@ -1,37 +1,181 @@
-**Meta Description:**
-Learn how systems thinking connects everything. Explore examples from traffic to ecosystems, aligned with NGSS for middle school science.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Welcome to Systems Thinking | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <style>
+        /* Chapter Specific Styles */
+        .chapter-header {
+            background: linear-gradient(135deg, #f0f5fb 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .simulation-container {
+            background: #2c3e50;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-**Title Tag Optimization:**
-Chapter 1: Systems Thinking for Middle School Science - Understand Connections
+        canvas {
+            width: 100%;
+            height: 300px;
+            background: #34495e;
+            border-radius: 10px;
+        }
 
-**Header Hierarchy:**
-```html
-<h1>Chapter 1: Welcome to Systems Thinking</h1>
-<h2>Hook: Why did changing one traffic light in Los Angeles cause a massive citywide traffic jam?</h2>
-<h2>What is Systems Thinking?</h2>
-<h2>How Systems Thinking Solves Problems</h2>
-<h2>Real-World Examples of Systems Thinking</h2>
-<h2>Becoming a Systems Thinker</h2>
-<h2>Summary and Reflection Questions</h2>
-```
+        .sim-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
 
-**Image Alt Text:**
-For any images you include (not currently in the HTML), use alt text like:
-- "Traffic jam in Los Angeles illustrating systems thinking"
-- "Diagram of a school day as a system"
-- "Orchestra playing together as a system"
-- "Ecosystem interactions in a forest"
+        .btn-sim {
+            background: #f1c40f;
+            color: #2c3e50;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
-**Internal Linking Suggestions:**
-- Link "NGSS standards" to a page detailing NGSS standards relevant to middle school.
-- Link "systems thinking" to a glossary or detailed explanation page.
-- Link "real-world examples" to a page with additional case studies or examples.
+        .btn-sim:hover {
+            transform: scale(1.05);
+            background: #f39c12;
+        }
 
-**Keywords for Teachers Searching:**
-- Middle school science systems thinking
-- NGSS standards systems thinking
-- Teaching systems thinking middle school
-- Systems thinking lesson plans
-- Interconnected systems in science education
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
 
-These changes will optimize Chapter 1 for search engines, ensuring that teachers looking for resources on systems thinking and NGSS standards can easily find and use your content.
+        .concept-card {
+            background: white;
+            border-left: 4px solid var(--primary-blue);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-term {
+            color: var(--accent-coral);
+            font-weight: 700;
+            cursor: help;
+            border-bottom: 2px dotted var(--accent-coral);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 01</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 1: Foundations</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Welcome to Systems Thinking</h1>
+            <p class="hero-description">
+                Why did changing one traffic light in Los Angeles cause a massive citywide traffic jam?
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                Imagine you're running late for school. You hit a red light. Then another. Then another. 
+                You feel stuck. But you're not just stuck in traffic—you are part of a <strong>System</strong>.
+            </p>
+
+            <h2>The Traffic Jam Mystery</h2>
+            <p>
+                In systems, a small change in one place can cause a huge effect somewhere else. 
+                This is called the <strong>Butterfly Effect</strong> (or "non-linearity" if you want to sound fancy).
+            </p>
+
+            <div class="concept-card">
+                <h3>🎮 Try It Yourself: The Feedback Loop</h3>
+                <p>Control the traffic light below. See what happens when you keep it red for just a <em>little</em> too long.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="trafficCanvas"></canvas>
+                    <div class="sim-controls">
+                        <button id="toggleLightBtn" class="btn-sim">Toggle Light Signal</button>
+                    </div>
+                    <p style="color: #ecf0f1; text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                        Watch how the cars react to each other, not just the light.
+                    </p>
+                </div>
+            </div>
+
+            <h2>What Did You See?</h2>
+            <p>
+                When you turned the light red, the first car stopped. Simple, right? 
+                But the second car had to stop because of the first car. The third because of the second.
+            </p>
+            <p>
+                Even when you turned the light green, the cars at the back <em>stayed stopped</em> for a while. 
+                This is a <span class="key-term" title="A delay between a cause and its effect">Time Delay</span>. 
+                Systems don't react instantly.
+            </p>
+
+            <h3>Everything is Connected</h3>
+            <p>
+                This isn't just about cars.
+                <ul>
+                    <li><strong>Your Body:</strong> You eat sugar (input) -> Your energy spikes (process) -> You crash later (feedback).</li>
+                    <li><strong>Nature:</strong> Wolves eat deer -> Deer population drops -> Grass grows back.</li>
+                    <li><strong>School:</strong> You study hard -> Get good grades -> Feel confident -> Study harder (Positive Feedback Loop!).</li>
+                </ul>
+            </p>
+
+            <div class="concept-card" style="border-left-color: var(--accent-coral);">
+                <h3>🗝️ Key Concept: The System</h3>
+                <p>
+                    A system is a set of things working together as parts of a mechanism or an interconnecting network.
+                    <strong>The whole is greater than the sum of its parts.</strong>
+                </p>
+            </div>
+
+        </article>
+
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>Ready for the next level?</h2>
+                <p>Now that you see connections, let's look at nature's secret code.</p>
+                <a href="../chapter-02/" class="btn-cta" style="margin-top: 1rem;">Next: Patterns in Nature →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="traffic-simulation.js"></script>
+</body>
+</html>

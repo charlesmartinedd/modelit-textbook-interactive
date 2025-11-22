@@ -1,195 +1,137 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Middle School Science concepts on rocks, soil, and slow systems with a focus on NGSS standards.">
-    <title>Chapter 9: Rocks, Soil, and Slow Systems | Middle School Science</title>
+    <title>Chapter 9: Rocks & Deep Time | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <style>
-        body {
-            font-family: 'Lora', serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: #0F6ACE;
-            color: white;
-            padding: 20px;
+        .chapter-header {
+            background: linear-gradient(135deg, #efebe9 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
-
-        nav {
-            margin: 20px 0;
+        
+        .simulation-container {
+            background: #ffffff;
+            border: 1px solid #d7ccc8;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        nav a {
-            color: #48d2fc;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #FF6B6B;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-weight: 800;
-        }
-
-        h2 {
-            font-weight: 600;
-            color: #0F6ACE;
-        }
-
-        h3 {
-            font-weight: 400;
-            color: #FF6B6B;
-        }
-
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        section:hover {
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #0F6ACE;
-            color: white;
-            position: relative;
-            bottom: 0;
+        canvas {
             width: 100%;
+            height: 400px;
+            background: #fff;
+            border-radius: 10px;
         }
-
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a {
-                margin: 10px 0;
-            }
+        
+        .slider-container {
+            max-width: 500px;
+            margin: 1.5rem auto 0;
+            text-align: center;
+        }
+        
+        input[type=range] {
+            width: 100%;
+            accent-color: #795548;
+        }
+        
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Chapter 9: Rocks, Soil, and Slow Systems</h1>
-        <nav>
-            <a href="index.html">Back to Main Page</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 09</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 3: Earth Systems</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Rocks, Soil, and Slow Systems</h1>
+            <p class="hero-description">
+                The top of Mount Everest has fossils of sea creatures. How did they get there?
+            </p>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <section>
-            <h2>Hook</h2>
-            <p>The top of Mount Everest has fossils of sea creatures. How did they get there?</p>
-            <p>Imagine standing at the peak of Mount Everest, the highest point on Earth. It's a place where only the bravest adventurers dare to go, and yet beneath the snow and ice, there are fossils of ancient sea creatures. How did these marine fossils end up on the top of a mountain? The answer lies in the incredible, slow-moving systems of our planet that shape the Earth over millions of years.</p>
-        </section>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                We live in the "fast lane." A long time for us is 100 years. 
+                For the Earth, 100 years is a blink. To understand the planet, we have to think in <strong>Deep Time</strong>.
+            </p>
 
-        <section>
-            <h2>Section 1: Earth's Dynamic Systems – The Rock Cycle</h2>
-            <p>The Earth is like a giant, ever-changing puzzle. One of the key pieces of this puzzle is the rock cycle, a continuous process that recycles rocks and minerals. Rocks can change from one type to another over vast periods, and this slow transformation is a perfect example of a system at work.</p>
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li><strong>Igneous Rocks:</strong> Formed from cooled magma or lava. Think of them as the Earth's fiery birthstones.</li>
-                <li><strong>Sedimentary Rocks:</strong> Created from particles of sand, shells, pebbles, and other fragments of material. These rocks are often where fossils are found.</li>
-                <li><strong>Metamorphic Rocks:</strong> Formed under the surface of the Earth from the transformation of existing rock types due to heat and pressure.</li>
-            </ul>
-            <p>The rock cycle illustrates systems thinking by showing how these different rock types are interconnected through processes like melting, cooling, eroding, and compressing.</p>
-        </section>
+            <h2>The Slowest Recycling Plant</h2>
+            <p>
+                Just like water cycles, rocks cycle too. It just takes 100 million years.
+                <br>
+                Mountains are worn down by rain (Weathering). The dust becomes mud (Sediment). The mud is buried and baked into rock. The rock is pushed up to become a new mountain.
+            </p>
 
-        <section>
-            <h2>Section 2: Soil Formation – More Than Just Dirt</h2>
-            <p>Soil is much more than just dirt beneath your feet. It's a vital part of our environment, supporting plants, animals, and humans. Soil is formed through a slow system that involves the weathering of rocks and the decomposition of organic matter.</p>
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li><strong>Weathering:</strong> The breaking down of rocks into smaller pieces by wind, water, and chemical processes.</li>
-                <li><strong>Organic Matter:</strong> Decayed plants and animals that enrich the soil.</li>
-            </ul>
-            <p>Consider a forest floor. Over time, fallen leaves and dead plants mix with weathered rock particles, creating rich soil.</p>
-        </section>
+            <div class="simulation-container">
+                <h3>⏳ The Million-Year Slider</h3>
+                <p>Drag the slider to speed up time. Watch a mountain turn into an ocean floor, and then a new mountain.</p>
+                
+                <canvas id="rockCanvas"></canvas>
+                
+                <div class="slider-container">
+                    <label for="timeSlider"><strong>Time Travel</strong></label>
+                    <input type="range" id="timeSlider" min="0" max="100" value="0">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #7f8c8d; margin-top: 0.5rem;">
+                        <span>Today</span>
+                        <span>+50 Million Years</span>
+                        <span>+100 Million Years</span>
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <h2>Section 3: Tectonic Plates – Earth's Moving Puzzle Pieces</h2>
-            <p>The fossils on Mount Everest are there because of the movement of tectonic plates. These massive slabs of Earth's crust move slowly, but their impact is monumental.</p>
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li><strong>Tectonic Plates:</strong> Large sections of Earth's crust that move over the mantle.</li>
-                <li><strong>Plate Boundaries:</strong> Locations where two plates meet, causing earthquakes, volcanic activity, and mountain building.</li>
-            </ul>
-            <p>The Himalayas, including Mount Everest, were formed by the collision of the Indian and Eurasian plates.</p>
-        </section>
+            <h2>Why Do We Find Sea Shells on Mountains?</h2>
+            <p>
+                Because those mountains <em>were</em> the sea floor. 
+                When tectonic plates crashed into each other (like India crashing into Asia), the ocean floor buckled and rose up to form the Himalayas.
+            </p>
 
-        <section>
-            <h2>Connections to Other Chapters</h2>
-            <p>This chapter connects to previous discussions on Earth's structure and introduces the idea of slow systems, a theme that will continue in future chapters on ecosystems and climate change.</p>
-        </section>
+            <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #e67e22; margin-top: 2rem;">
+                <h3>🧩 System Insight: Rate of Change</h3>
+                <p>
+                    Some parts of a system move fast (Weather). Some move slow (Rocks). 
+                    Problems happen when fast systems (Humans burning oil) overwhelm slow systems (Carbon cycle).
+                </p>
+            </div>
 
-        <section>
-            <h2>Summary and Reflection Questions</h2>
-            <p>The story of rocks, soil, and tectonic plates is a testament to the power of slow systems on Earth. These systems have shaped our planet for millions of years, creating the landscapes we see today.</p>
-            <ul>
-                <li>How does the rock cycle demonstrate systems thinking?</li>
-                <li>Why is soil formation considered a slow system?</li>
-                <li>How do tectonic plates contribute to the presence of sea fossils on Mount Everest?</li>
-            </ul>
-            <p>Reflect on how these slow systems impact our daily lives and the world around us.</p>
+        </article>
+
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>Unit 3 Complete!</h2>
+                <p>You understand the planet. Now let's look at the systems WE built.</p>
+                <a href="../chapter-10/" class="btn-cta" style="margin-top: 1rem;">Start Unit 4: Human Systems →</a>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 ModelIt Education. All rights reserved.</p>
-    </footer>
-
-    <img src="rock_cycle.jpg" alt="Diagram of the rock cycle showing the transformation of rocks over time." style="display:none;">
-    <img src="soil_formation.jpg" alt="Illustration showing the process of soil formation through weathering and organic matter." style="display:none;">
-    <img src="tectonic_plates.jpg" alt="Visual representation of tectonic plates and their movement." style="display:none;">
-    
-    <script>
-        // Internal linking suggestions
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                if (link.textContent.includes('Main Page')) {
-                    link.href = '/path-to-main-page.html';
-                }
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="rock-sim.js"></script>
 </body>
 </html>
-```
-
-- **Meta Description:** "Explore Middle School Science concepts on rocks, soil, and slow systems with a focus on NGSS standards."
-- **Title Tag Optimization:** "Chapter 9: Rocks, Soil, and Slow Systems | Middle School Science"
-- **Header Hierarchy:** H1 for the main title, H2 for sections, and H3 for key concepts within sections.
-- **Image Alt Text:** Added descriptive alt text for images related to rock cycle, soil formation, and tectonic plates.
-- **Internal Linking Suggestions:** Added a script to adjust internal links for navigation.
-- **Keywords for Teachers:** Middle school science, systems thinking, rock cycle, soil formation, tectonic plates, NGSS standards.

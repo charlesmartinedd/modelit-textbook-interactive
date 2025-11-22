@@ -1,213 +1,112 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Technology Systems | Middle School Science</title>
-    <meta name="description" content="Explore how technology systems connect people and processes globally, essential for middle school science aligned with NGSS standards.">
+    <title>Chapter 10: Technology Systems | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <style>
-        body {
-            font-family: 'Lora', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #0F6ACE;
-            color: white;
-            padding: 20px;
+        .chapter-header {
+            background: linear-gradient(135deg, #e8eaf6 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
-
-        nav {
-            margin: 20px 0;
+        
+        .simulation-container {
+            background: #ffffff;
+            border: 1px solid #c5cae9;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        nav a {
-            color: #48d2fc;
-            text-decoration: none;
-            padding: 10px;
-            transition: color 0.3s ease;
+        canvas {
+            width: 100%;
+            height: 400px;
+            background: #fff;
+            border-radius: 10px;
         }
-
-        nav a:hover {
-            color: #FF6B6B;
-        }
-
-        section {
-            padding: 20px;
+        
+        .content-block {
             max-width: 800px;
-            margin: auto;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            animation: fadeIn 0.5s ease;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 2em;
-            font-weight: 600;
-            color: #0F6ACE;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            font-weight: 400;
-            color: #FF6B6B;
-        }
-
-        p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-
-        .key-concepts {
-            background-color: #48d2fc;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-
-        .reflection-questions {
-            background-color: #FF6B6B;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 14px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            h3 {
-                font-size: 1.2em;
-            }
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Chapter 10: Technology Systems</h1>
-        <nav>
-            <a href="index.html">Back to Main Page</a>
-            <a href="chapter5.html">Ecosystems</a>
-            <a href="chapter8.html">Engineering Design</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 10</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 4: Human Systems</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Technology Systems</h1>
+            <p class="hero-description">
+                Your smartphone contains materials from 6 continents and required 1000+ people to make.
+            </p>
+        </div>
     </header>
 
-    <section>
-        <h2>Hook</h2>
-        <img src="smartphone.jpg" alt="A smartphone, a global technology system" style="width:100%;height:auto;">
-        <p>Your smartphone contains materials from 6 continents and required 1000+ people to make.</p>
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                We often think of technology as "objects"—a phone, a car, a toaster. 
+                But technology is actually a <strong>System</strong> of people, materials, and knowledge.
+            </p>
 
-        <h2>Opening Story/Scenario</h2>
-        <p>Imagine waking up one morning and reaching for your smartphone to check the weather forecast, text a friend, or watch a funny video. Have you ever wondered about the journey your smartphone took before it ended up in your hands? It's a fascinating tale of materials sourced from around the world, assembled through the efforts of thousands of people. Your smartphone is a perfect example of a technology system—a complex network that connects people, resources, and processes across the globe. In this chapter, we will explore the intricate web of technology systems, unraveling how they work and why they are essential to our daily lives.</p>
+            <h2>The Global Assembly Line</h2>
+            <p>
+                If you tried to build a toaster from scratch—mining the iron, melting the plastic—it would take you a lifetime and cost millions. 
+                But you can buy one for $20. How? Because of the global <strong>Supply Chain</strong>.
+            </p>
 
-        <h2>Section 1: Understanding Technology Systems</h2>
-        <p>Technology systems are made up of interconnected parts that work together to achieve a specific goal. Just like your body is a system comprised of organs that perform various functions, technology systems include components such as hardware, software, people, and data. The goal of a technology system might be to communicate, transport, or process information.</p>
+            <div class="simulation-container">
+                <h3>📱 Anatomy of a Phone</h3>
+                <p>Hover over the map points to see where the parts of your phone actually come from.</p>
+                
+                <canvas id="techCanvas"></canvas>
+                
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #7f8c8d;">
+                    *Simplified map. Real supply chains are even more complex!
+                </p>
+            </div>
 
-        <div class="key-concepts">
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li><strong>System:</strong> A group of interacting elements that form a complex whole.</li>
-                <li><strong>Technology System:</strong> A combination of resources, processes, and people that work together to solve a problem or achieve a goal.</li>
-            </ul>
-        </div>
+            <h2>Interdependence</h2>
+            <p>
+                This system is efficient, but fragile. 
+                If a ship gets stuck in the Suez Canal (System Blockage), or a factory in Taiwan shuts down, the whole world stops getting phones.
+                We are all connected.
+            </p>
 
-        <h3>Step-by-step Explanation:</h3>
-        <ol>
-            <li><strong>Identify the Components:</strong> Consider your smartphone as a technology system. Its components include the microprocessor (hardware), operating system (software), apps (data), and you, the user.</li>
-            <li><strong>Understand the Interactions:</strong> These components interact seamlessly. The hardware supports the software, the software runs the apps, and you control it all with your input.</li>
-            <li><strong>Recognize the Goal:</strong> The primary goal of a smartphone system is to facilitate communication and access to information.</li>
-        </ol>
+        </article>
 
-        <h2>Section 2: Real-World Examples of Technology Systems</h2>
-        <p>Let's zoom out from smartphones and look at technology systems in our world. Consider a public transportation system, like a city's subway network. It involves trains (hardware), scheduling software, ticketing systems, and thousands of passengers daily.</p>
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>From Tech to People</h2>
+                <p>If machines are connected, what about us?</p>
+                <a href="../chapter-11/" class="btn-cta" style="margin-top: 1rem;">Next: Social Systems →</a>
+            </div>
+        </section>
+    </main>
 
-        <h3>Step-by-step Explanation:</h3>
-        <ol>
-            <li><strong>Identify the Components:</strong> Trains, tracks, control centers, and passengers.</li>
-            <li><strong>Understand the Interactions:</strong> Trains run on tracks according to schedules set by control centers, carrying passengers to their destinations.</li>
-            <li><strong>Recognize the Goal:</strong> The goal is to efficiently transport people from one place to another.</li>
-        </ol>
-
-        <h3>Real-World Example:</h3>
-        <p>Think about the weather app on your smartphone. It relies on a global system of satellites, sensors, and complex algorithms that predict weather patterns. Meteorologists use this system to provide accurate forecasts, helping people plan their days.</p>
-
-        <h2>Section 3: Systems Thinking in Technology</h2>
-        <p>Systems thinking is a way of understanding how different parts of a system interact and influence each other. It helps us solve complex problems and improve systems over time.</p>
-
-        <div class="key-concepts">
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li><strong>Feedback Loop:</strong> A process where the output of a system feeds back into the system as input, influencing future outputs.</li>
-                <li><strong>Optimization:</strong> Improving a system to make it more efficient or effective.</li>
-            </ul>
-        </div>
-
-        <h3>Step-by-step Explanation:</h3>
-        <ol>
-            <li><strong>Identify Feedback Loops:</strong> In a technology system like an online shopping platform, customer reviews (feedback) influence product offerings (output).</li>
-            <li><strong>Optimize the System:</strong> Use feedback to improve the system. For example, an app developer might update an app based on user reviews to enhance its functionality.</li>
-        </ol>
-
-        <h2>Section 4: The Future of Technology Systems</h2>
-        <p>As technology evolves, systems become more advanced and interconnected. Innovations like the Internet of Things (IoT) connect everyday devices to the internet, creating smarter homes and cities.</p>
-
-        <h3>Real-World Example:</h3>
-        <p>Consider self-driving cars, a technology system that uses sensors, cameras, and AI to navigate roads. These cars communicate with traffic systems to enhance safety and efficiency.</p>
-
-        <h2>Summary and Reflection Questions:</h2>
-        <p>Technology systems are all around us, influencing how we live, work, and play. By understanding these systems, we can appreciate the complex interactions that make modern life possible.</p>
-
-        <div class="reflection-questions">
-            <h3>Reflection Questions:</h3>
-            <ol>
-                <li>What are some technology systems you interact with daily?</li>
-                <li>How can systems thinking help us solve real-world problems?</li>
-                <li>What advances in technology systems do you think we'll see in the future?</li>
-            </ol>
-        </div>
-
-        <p>In this chapter, we've uncovered the hidden networks that power our world. Technology systems are fascinating examples of how people and technology come together to achieve incredible things. As you continue to explore the world of science and technology, remember that systems thinking is a valuable tool for understanding and improving the systems that shape our lives.</p>
-    </section>
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="tech-sim.js"></script>
 </body>
-
 </html>
-```
-
-1. **Meta Description**: "Explore how technology systems connect people and processes globally, essential for middle school science aligned with NGSS standards."
-2. **Title Tag Optimization**: "Understanding Technology Systems | Middle School Science"
-3. **Header Hierarchy**: H1: Chapter 10: Technology Systems; H2: Hook, Opening Story/Scenario, Section 1, Section 2, Section 3, Section 4, Summary and Reflection Questions; H3: Key Concepts, Step-by-step Explanation, Real-World Example, Reflection Questions.
-4. **Image alt text**: "A smartphone, a global technology system"
-5. **Internal linking suggestions**: Links to "Ecosystems" and "Engineering Design" chapters.
-6. **Keywords for teachers searching**: technology systems, systems thinking, middle school science, NGSS standards, global connections, educational technology.
