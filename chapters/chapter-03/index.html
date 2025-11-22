@@ -1,232 +1,140 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 3: Energy Flows Through Everything - Middle School Science</title>
-    <meta name="description" content="Explore how energy flows through ecosystems, from the sun to food chains, with systems thinking, aligned with NGSS standards for middle school.">
+    <title>Chapter 3: Energy Flows | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <style>
-        body {
-            font-family: 'Lora', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333;
-        }
-
-        header {
-            background-color: #0F6ACE;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #48d2fc;
-            padding: 10px;
-        }
-
-        nav a {
-            color: #0F6ACE;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        nav a:hover {
-            color: #FF6B6B;
-            transition: color 0.3s;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin: 15px 0;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .diagram {
-            margin: 20px 0;
+        .chapter-header {
+            background: linear-gradient(135deg, #f0f5fb 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
-
-        .reflection {
-            background-color: #FF6B6B;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
+        
+        .simulation-container {
+            background: #2c3e50;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0F6ACE;
-            color: white;
+        canvas {
+            width: 100%;
+            height: 400px;
+            background: #34495e;
+            border-radius: 10px;
+            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: 1em;
-            }
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .concept-card {
+            background: white;
+            border-left: 4px solid #f1c40f;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .energy-stat {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f1c40f;
         }
     </style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Chapter 3: Energy Flows Through Everything</h1>
-    </header>
-
-    <nav>
-        <a href="index.html">Back to Main Page</a>
-        <a href="chapter2.html">Previous Chapter</a>
-        <a href="chapter4.html">Next Chapter</a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 03</span></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="container">
-
-        <div class="section">
-            <h2>Hook</h2>
-            <p>You ate a salad for lunch. Where did that energy come from—and where did it really start?</p>
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 1: Foundations</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Energy Flows Through Everything</h1>
+            <p class="hero-description">
+                You ate a salad for lunch. Where did that energy come from—and where did it really start?
+            </p>
         </div>
+    </header>
 
-        <div class="section">
-            <h2>Opening Story: The Journey of Your Salad</h2>
-            <p>Imagine this: You just finished a delicious salad, full of crisp lettuce, juicy tomatoes, and crunchy carrots. But have you ever wondered where the energy in that salad came from? It didn't just appear out of nowhere. The energy in your salad is part of a bigger story that starts with the sun and travels through a network of living things. This chapter is all about understanding how energy flows through everything, connecting plants, animals, and even you!</p>
-        </div>
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                Energy is the currency of the universe. It cannot be created or destroyed, only changed from one form to another. 
+                This is the First Law of Thermodynamics, but we can just call it "The No-Free-Lunch Rule."
+            </p>
 
-        <div class="section">
-            <h2>Section 1: The Source of All Energy – The Sun</h2>
-            <p>Everything starts with the sun. The sun is a giant ball of energy, and it sends out light and heat across the solar system. Plants are amazing because they know how to catch sunlight and use it in a process called photosynthesis. During photosynthesis, plants take sunlight, water, and carbon dioxide to create their own food and oxygen. This is where the energy in your salad truly begins.</p>
-            <h3>Key Concept: Photosynthesis</h3>
-            <ul>
-                <li><strong>Definition</strong>: Photosynthesis is the process by which plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy in the form of glucose.</li>
-                <li><strong>Step-by-Step</strong>:
-                    <ol>
-                        <li>Plants absorb sunlight with their leaves.</li>
-                        <li>They take in carbon dioxide from the air and water from the soil.</li>
-                        <li>Using the sun's energy, they convert these ingredients into glucose and release oxygen.</li>
-                    </ol>
-                </li>
-            </ul>
-            <p><strong>Real-World Example</strong>: Think about a field of sunflowers. Each sunflower is like a tiny solar panel, capturing sunlight and turning it into energy it can use to grow and thrive.</p>
-            <p><strong>NGSS Connection</strong>: MS-PS3-1 encourages students to develop models to describe ways the sun's energy is captured and used by living organisms.</p>
-        </div>
+            <h2>The 10% Rule</h2>
+            <p>
+                Here is the harsh reality of nature: transfers are expensive. 
+                Every time energy moves from one thing to another (like a rabbit eating grass), most of it is lost as <strong>Heat</strong>.
+            </p>
 
-        <div class="section">
-            <h2>Section 2: Energy Transfers – From Plants to Animals</h2>
-            <p>Once plants have captured energy, it flows on to other living things. When you eat a salad, you're taking in the energy that the plants have stored. But energy transfer doesn’t stop there. Animals eat plants (or other animals that eat plants) to get energy, too. This creates a food chain, where energy moves from one living thing to another.</p>
-            <h3>Key Concept: Food Chains and Food Webs</h3>
-            <ul>
-                <li><strong>Definition</strong>: A food chain is a sequence that shows how energy and nutrients flow from one organism to another. A food web is a more complex network of interconnected food chains in an ecosystem.</li>
-                <li><strong>Step-by-Step</strong>:
-                    <ol>
-                        <li>Plants produce energy through photosynthesis.</li>
-                        <li>Herbivores (like rabbits) eat the plants, gaining energy.</li>
-                        <li>Carnivores (like foxes) eat herbivores, transferring energy along the chain.</li>
-                    </ol>
-                </li>
-            </ul>
-            <p><strong>Real-World Example</strong>: In a simple garden food chain, a butterfly might sip nectar from a flower, a bird could eat the butterfly, and a cat might chase down the bird.</p>
-            <p><strong>NGSS Connection</strong>: MS-LS2-3 asks students to develop models to describe the cycling of matter and flow of energy among living things in an ecosystem.</p>
-        </div>
+            <div class="concept-card">
+                <h3>🔥 The Energy Pyramid Simulator</h3>
+                <p>Click on a level to attempt to move energy up. Watch how much is lost as heat (red particles).</p>
+                
+                <div class="simulation-container">
+                    <canvas id="energyCanvas"></canvas>
+                    <p style="color: #ecf0f1; text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                        Tap the bars to flow energy. Notice how hard it is to get energy to the top predators?
+                    </p>
+                </div>
+            </div>
 
-        <div class="section">
-            <h2>Section 3: Systems Thinking – Seeing the Bigger Picture</h2>
-            <p>Understanding energy flow is all about seeing connections. Systems thinking helps us understand the world by looking at how different parts connect and interact. In ecosystems, everything is linked. A change in one part of the system can affect many others. For example, if a disease wipes out a plant species, the animals that rely on it for food will also be affected.</p>
-            <h3>Key Concept: Systems Thinking</h3>
-            <ul>
-                <li><strong>Definition</strong>: Systems thinking is an approach to understanding how different parts of a system interact and affect each other.</li>
-                <li><strong>Step-by-Step</strong>:
-                    <ol>
-                        <li>Identify the components of the system (plants, animals, etc.).</li>
-                        <li>Understand how energy flows between these components.</li>
-                        <li>Consider how changes to one part of the system impact others.</li>
-                    </ol>
-                </li>
-            </ul>
-            <p><strong>Real-World Example</strong>: Consider a forest ecosystem. If trees are cut down, not only do we lose the plants that produce energy, but animals that depend on those trees for food and shelter are also affected.</p>
-            <p><strong>NGSS Connection</strong>: Understanding ecosystems and energy flow aligns with MS-LS2-3 and encourages students to see the world as interconnected systems.</p>
-        </div>
+            <h2>Why Are There So Few Lions?</h2>
+            <p>
+                Have you ever wondered why forests have millions of plants, thousands of bugs, hundreds of deer, but only one or two bears?
+            </p>
+            <p>
+                Because of the <strong>energy loss</strong> you just saw. By the time energy gets to the top, there just isn't much left. 
+                A predator needs a huge base of support to exist.
+            </p>
 
-        <div class="reflection">
-            <h2>Summary and Reflection Questions</h2>
-            <p>In this chapter, we've explored how energy from the sun flows through plants, into your salad, and into you. We learned about photosynthesis, food chains, and the importance of systems thinking. As you think about energy, consider these questions:</p>
-            <ul>
-                <li>How does the energy you get from food help you in your daily life?</li>
-                <li>What might happen to an ecosystem if one part of the food chain is removed?</li>
-                <li>How can understanding energy flow help us make better choices for the environment?</li>
-            </ul>
-            <p>By thinking about these questions, you'll start to see how interconnected everything is and how energy truly flows through everything around us.</p>
-        </div>
+            <div class="concept-card" style="border-left-color: var(--accent-coral);">
+                <h3>🌍 System Connection</h3>
+                <p>
+                    This flow of energy connects the <strong>Sun</strong> (an Earth System) to <strong>Plants</strong> (Living Systems) to <strong>Humans</strong> (Social Systems).
+                    If the sun dims, or the plants die, the whole chain collapses.
+                </p>
+            </div>
 
-    </div>
+        </article>
 
-    <footer>
-        <p>&copy; 2023 ModelIt Education</p>
-    </footer>
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>Unit 1 Complete!</h2>
+                <p>You've mastered the basics: Connections, Patterns, and Flows. Now let's apply them to life itself.</p>
+                <a href="../chapter-04/" class="btn-cta" style="margin-top: 1rem;">Start Unit 2: Ecosystems →</a>
+            </div>
+        </section>
+    </main>
 
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="energy-sim.js"></script>
 </body>
 </html>
-```
-
-**Image Alt Text Suggestions**:
-- For an image of a sunflower: "A field of sunflowers capturing sunlight for photosynthesis."
-- For an image of a food chain: "Diagram showing a simple food chain with plants, herbivores, and carnivores."
-- For an image illustrating systems thinking: "Diagram illustrating interconnected systems in a forest ecosystem."
-
-**Internal Linking Suggestions**:
-- Link to a page on Chapter 2 where photosynthesis might have been introduced.
-- Link to a glossary page for terms like "photosynthesis," "food chain," and "systems thinking."
-- Link to resources or activities on NGSS standards related to energy flow and ecosystems.
-
-**Keywords for Teachers Searching**:
-- Middle school science energy flow
-- NGSS energy systems thinking
-- Photosynthesis for middle school
-- Food chains and ecosystems lesson plan
-- Systems thinking in science education
-- Energy transfer in ecosystems lesson
-
-These optimizations will help improve the discoverability of Chapter 3 for educators looking for resources on energy flow and systems thinking in middle school science, aligning with the NGSS standards.

@@ -1,208 +1,144 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 4: Ecosystems - Nature's Networks | Middle School Science</title>
-    <meta name="description" content="Explore ecosystems and systems thinking in middle school science, aligned with NGSS standards. Learn through Yellowstone's Wolves case study.">
+    <title>Chapter 4: Ecosystems | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <style>
-        body {
-            font-family: 'Lora', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #2c3e50;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #0F6ACE;
-            color: #fff;
-            padding: 20px;
+        .chapter-header {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
-
-        nav {
-            margin: 20px 0;
+        
+        .simulation-container {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        nav a {
-            color: #48d2fc;
-            text-decoration: none;
-            padding: 10px;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        nav a:hover {
-            border-color: #48d2fc;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-weight: 800;
-        }
-
-        h2 {
-            font-weight: 600;
-            color: #FF6B6B;
-        }
-
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            transition: background-color 0.3s;
-        }
-
-        section:hover {
-            background-color: #f0f8ff;
-        }
-
-        .summary {
-            background-color: #FF6B6B;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0F6ACE;
-            color: #fff;
-            position: relative;
-            bottom: 0;
+        canvas {
             width: 100%;
+            height: 350px;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                padding: 40px;
-            }
-
-            section {
-                padding: 30px;
-            }
+        .sim-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
 
-        @media (min-width: 1024px) {
-            h1 {
-                font-size: 2.5rem;
-            }
+        .btn-sim {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .btn-sim.active {
+            background: #c0392b;
+        }
 
-            h2 {
-                font-size: 2rem;
-            }
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .key-term {
+            color: #27ae60;
+            font-weight: 700;
+            border-bottom: 2px dotted #27ae60;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Chapter 4: Ecosystems - Nature's Networks</h1>
-        <nav>
-            <a href="index.html">Back to Main Page</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 04</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 2: Living Systems</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Ecosystems: Nature's Networks</h1>
+            <p class="hero-description">
+                When wolves returned to Yellowstone, the rivers physically changed shape. How?
+            </p>
+        </div>
     </header>
 
-    <div class="container">
-        <section>
-            <h2 id="hook">Hook: The Tale of Yellowstone's Wolves</h2>
-            <p>When wolves returned to Yellowstone, the rivers physically changed shape. How? Imagine a world where a single decision can ripple across an entire landscape, changing not only the lives of animals but also the very ground they walk on. This is the story of Yellowstone National Park.</p>
-        </section>
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                In 1995, scientists did something controversial: they brought 14 wolves into Yellowstone National Park. 
+                They expected the wolves to eat elk. They didn't expect the rivers to change course.
+            </p>
 
-        <section>
-            <h2 id="web-of-life">The Web of Life - Understanding Ecosystems</h2>
-            <p>An ecosystem is like a giant puzzle, where every piece is connected. It includes all the living things, like plants, animals, and microorganisms, as well as non-living components such as air, water, and soil. These elements work together in a delicate balance.</p>
-            <p>When one piece is altered, it can affect the whole system.</p>
-            <h3>Real-World Example: Yellowstone Wolves</h3>
-            <p>In the 1920s, wolves were eliminated from Yellowstone, which led to an overpopulation of elk. With no predators to keep them in check, the elk overgrazed, particularly on young willow and aspen trees. This grazing reduced habitat for other species, such as beavers, which rely on these trees for building dams.</p>
-            <h3>Systems Thinking Concept: Interdependence</h3>
-            <p>Every part of an ecosystem is interdependent. This means that organisms and their environment rely on each other to survive. Understanding this interconnectedness helps us see the bigger picture and predict how changes can cause chain reactions.</p>
-        </section>
+            <h2>The Balance of Nature</h2>
+            <p>
+                Nature isn't static; it's a dynamic dance. This dance is controlled by <span class="key-term">Feedback Loops</span>.
+            </p>
 
-        <section>
-            <h2 id="trophic-cascades">Trophic Cascades – The Ripple Effect</h2>
-            <h3>Trophic Cascade Defined</h3>
-            <p>A trophic cascade is an ecological phenomenon triggered by the addition or removal of top predators, leading to changes in the population sizes of species throughout the food chain.</p>
-            <h3>Real-World Example: River Reclamation</h3>
-            <p>When wolves were reintroduced to Yellowstone in 1995, they began to hunt elk again. This reduced the elk population and allowed overgrazed areas to regrow.</p>
-            <h3>Systems Thinking Concept: Feedback Loops</h3>
-            <p>Feedback loops are processes where the output of a system feeds back into the system as input, often amplifying or stabilizing effects. In Yellowstone, the presence of wolves created a positive feedback loop, where healthier plant life led to more wildlife, which in turn supported a more diverse and balanced ecosystem.</p>
-        </section>
+            <div class="simulation-container">
+                <h3>🐺 The Predator-Prey Dance</h3>
+                <p>See what happens when you remove the predator from the system. Watch the Deer (Orange) population explode, and then crash as they eat all the Grass (Green).</p>
+                <canvas id="ecoCanvas"></canvas>
+                <div class="sim-controls">
+                    <button id="wolfBtn" class="btn-sim">Introduce Wolves</button>
+                </div>
+            </div>
 
-        <section>
-            <h2 id="human-connection">The Human Connection – Our Role in Ecosystems</h2>
-            <h3>Human Impact and Responsibility</h3>
-            <p>Humans are an integral part of ecosystems and have a significant impact on them. Our actions can disrupt these natural networks, but we also have the power to restore balance.</p>
-            <h3>Real-World Example: Urban Ecosystems</h3>
-            <p>Urban areas might seem separate from nature, but they are ecosystems too. Consider a city park: it provides habitat for birds, insects, and plants. When humans plant diverse species and create green spaces, they contribute to biodiversity and help maintain ecological balance.</p>
-            <h3>Systems Thinking Concept: Sustainability</h3>
-            <p>Sustainability involves using resources in a way that meets our needs without compromising the ability of future generations to meet theirs. By thinking sustainably, we can make decisions that support the health of ecosystems around us.</p>
-        </section>
-
-        <section>
-            <h2 id="reflections-connections">Reflections and Connections</h2>
-            <div class="summary">
-                <p><strong>Summary and Reflection Questions:</strong></p>
+            <h2>Trophic Cascades</h2>
+            <p>
+                What you just saw is called a <strong>Trophic Cascade</strong>. 
                 <ol>
-                    <li>How do wolves in Yellowstone demonstrate the concept of a trophic cascade?</li>
-                    <li>What are some ways humans can positively contribute to urban ecosystems?</li>
-                    <li>How does systems thinking help us understand the balance in ecosystems?</li>
-                    <li>Reflect on a local ecosystem you are familiar with. How are the organisms and non-living elements in that system connected?</li>
+                    <li>Wolves ate elk.</li>
+                    <li>Elk stopped hanging out near rivers (too dangerous).</li>
+                    <li>Trees near rivers grew back (aspens and willows).</li>
+                    <li>Beavers returned (they eat trees).</li>
+                    <li>Beaver dams slowed the water.</li>
+                    <li><strong>The rivers changed shape.</strong></li>
                 </ol>
+            </p>
+            
+            <p>
+                This is systems thinking in action: A biological change (wolves) caused a geological change (rivers).
+            </p>
+
+        </article>
+
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>From Forest to Body</h2>
+                <p>If a forest is a system, what about you?</p>
+                <a href="../chapter-05/" class="btn-cta" style="margin-top: 1rem;">Next: The Human Body →</a>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2023 ModelIt. All rights reserved.</p>
-    </footer>
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="ecosystem-sim.js"></script>
 </body>
-
 </html>
-```
-
-**Meta Description**: Explore ecosystems and systems thinking in middle school science, aligned with NGSS standards. Learn through Yellowstone's Wolves case study.
-
-**Title Tag Optimization**: Chapter 4: Ecosystems - Nature's Networks | Middle School Science
-
-**Header Hierarchy**:
-- H1: Chapter 4: Ecosystems - Nature's Networks
-- H2: Hook: The Tale of Yellowstone's Wolves
-- H2: The Web of Life - Understanding Ecosystems
-- H3: Real-World Example: Yellowstone Wolves
-- H3: Systems Thinking Concept: Interdependence
-- H2: Trophic Cascades – The Ripple Effect
-- H3: Trophic Cascade Defined
-- H3: Real-World Example: River Reclamation
-- H3: Systems Thinking Concept: Feedback Loops
-- H2: The Human Connection – Our Role in Ecosystems
-- H3: Human Impact and Responsibility
-- H3: Real-World Example: Urban Ecosystems
-- H3: Systems Thinking Concept: Sustainability
-- H2: Reflections and Connections
-
-**Image Alt Text**: Ensure all educational images have descriptive alt text, e.g., "Diagram of Yellowstone trophic cascade".
-
-**Internal Linking Suggestions**:
-- Link to Chapter 2 on energy flow and food chains.
-- Provide a link to Chapter 5 for deeper exploration of organism adaptation.
-
-**Keywords for Teachers Searching**: Middle school science, ecosystems, systems thinking, NGSS standards, Yellowstone wolves, trophic cascade, feedback loops, sustainability, urban ecosystems.

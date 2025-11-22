@@ -1,44 +1,115 @@
-**Meta Description**
-```html
-<meta name="description" content="Explore the interconnected systems of weather and climate. Learn how small changes impact global patterns, aligned with NGSS standards for middle school." />
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Weather & Climate | Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <style>
+        .chapter-header {
+            background: linear-gradient(135deg, #d6eaf8 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .simulation-container {
+            background: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
 
-**Title Tag Optimization**
-```html
-<title>Chapter 8: Exploring Weather & Climate Systems - NGSS Aligned</title>
-```
+        canvas {
+            width: 100%;
+            height: 300px;
+            background: #fff;
+            border-radius: 10px;
+            cursor: crosshair;
+        }
+        
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Connected</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#chapters">Back to Chapters</a></li>
+                <li><span class="chapter-badge available">Chapter 08</span></li>
+            </ul>
+        </div>
+    </nav>
 
-**Header Hierarchy**
-```html
-<h1>Chapter 8: Exploring Weather and Climate Systems</h1>
-<h2>A Butterfly's Impact on Weather</h2>
-<h2>Section 1: Understanding Weather and Climate</h2>
-<h3>Key Concepts</h3>
-<h2>Section 2: The Interconnected Systems of Earth</h2>
-<h3>Step-by-Step Explanation</h3>
-<h2>Section 3: Human Impact on Climate Systems</h2>
-<h3>Real-world Example</h3>
-<h2>Connections to Other Chapters</h2>
-<h2>Summary and Reflection Questions</h2>
-<h3>Reflection Questions</h3>
-```
+    <!-- Chapter Hero -->
+    <header class="chapter-header">
+        <div class="container">
+            <span class="section-tag">Unit 3: Earth Systems</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Weather & Climate</h1>
+            <p class="hero-description">
+                A butterfly in Brazil can actually affect the weather in Texas. Here's how.
+            </p>
+        </div>
+    </header>
 
-**Image Alt Text**
-```html
-<img src="butterfly-effect.jpg" alt="Illustration of the Butterfly Effect explaining weather impact" />
-<img src="weather-climate-system.jpg" alt="Diagram of weather and climate systems interaction" />
-```
+    <!-- Main Content -->
+    <main>
+        <article class="content-block">
+            <p class="lead-text" style="font-size: 1.4rem; line-height: 1.8; color: var(--gray-text);">
+                Prediction is hard. Especially when it comes to the future. 
+                Meteorologists have supercomputers, but they still can't tell you if it will rain 3 weeks from now. Why?
+            </p>
 
-**Internal Linking Suggestions**
-- Link to Chapter 5: Earth's Water Systems to provide context on how water influences weather.
-- Link to Chapter 6: Energy from the Sun for understanding the role of solar energy in climate systems.
-- Link to Chapter 7: Ecosystems and Interactions to illustrate the biosphere's role in climate.
+            <h2>Chaos Theory</h2>
+            <p>
+                It's not because they are bad at math. It's because the atmosphere is a <strong>Chaotic System</strong>. 
+                Small changes in the beginning result in massive differences later on.
+            </p>
 
-**Keywords for Teachers Searching**
-- Middle school science weather lessons
-- Systems thinking in climate education
-- NGSS weather and climate standards
-- Interactive climate system activities
-- Teaching the Butterfly Effect in science
+            <div class="simulation-container">
+                <h3>🦋 The Butterfly Effect</h3>
+                <p>This is a wind map. Click anywhere to "flap your wings" and create a tiny disturbance. Watch how it changes the entire flow over time.</p>
+                
+                <canvas id="weatherCanvas"></canvas>
+                <p id="chaosLabel" style="text-align: center; margin-top: 1rem; font-weight: 600; color: #7f8c8d;">
+                    System Stable. Click to disturb.
+                </p>
+            </div>
 
-By implementing these SEO strategies, Chapter 8 will be more discoverable for educators seeking resources that align with NGSS standards, focusing on systems thinking within middle school science curricula.
+            <h2>Feedback Loops in Climate</h2>
+            <p>
+                Climate is different from weather. Climate is the average. 
+                But climate has feedback loops too:
+                <ul>
+                    <li><strong>Ice Albedo Effect:</strong> Ice melts -> Dark ocean exposed -> Absorbs more heat -> More ice melts. (Positive Feedback)</li>
+                    <li><strong>Cloud Cover:</strong> Hotter Earth -> More clouds -> Sunlight reflected -> Cooler Earth. (Negative Feedback)</li>
+                </ul>
+            </p>
+
+        </article>
+
+        <!-- Next Chapter CTA -->
+        <section class="cta-section" style="margin-top: 4rem;">
+            <div class="container">
+                <h2>Slow Down</h2>
+                <p>Weather is fast. But some systems are incredibly slow.</p>
+                <a href="../chapter-09/" class="btn-cta" style="margin-top: 1rem;">Next: Rocks & Deep Time →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="weather-sim.js"></script>
+</body>
+</html>
