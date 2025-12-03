@@ -277,3 +277,11 @@ MIT License - Open educational resource
 ---
 
 **🌟 Let's teach the world about systems thinking!**
+
+## Status
+Active
+
+## TODO
+- [ ] Complete remaining chapters (7-12)
+- [ ] Add interactive Canvas simulations
+- [ ] Implement assessment quizzes
